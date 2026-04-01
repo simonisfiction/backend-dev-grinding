@@ -10,6 +10,24 @@
   </head>
   <body>
     {% block body %}
+    <form method="POST" action="/add">
+      <label for="task">Task:</label>
+      <input type="text" name="task" id="task">
+      <button type="submit">Add</button>
+    </form>
+    <ul>
+      {% for task in tasks %}
+        <li>{{ task }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Multiplication!</h1>
+    <form method="POST" action="/multiply">
+      <label for="input">input</label>
+      <input type="number" name="input1" id="input1">
+      <input type="number" name="input2" id="input2">
+      <button type="submit">multiply</button>
+    </form>
+    <p>{{ mult_answer }}</p>
     {% endblock %}
   </body>
 </html>
